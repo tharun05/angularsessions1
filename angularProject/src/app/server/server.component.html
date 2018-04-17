@@ -1,9 +1,4 @@
-<h1>this is from app server component</h1>
 <br>
 
-<h3>this is {{ServerName}} and the server id is {{serverId}} and the status is  {{serverStatus}}</h3>
+<p [ngStyle]="{backgroundColor:'red'}" [ngClass]="{online:serverStatus == 'online'}">This is {{ServerName}} and the server id is {{serverId}} and the status is  {{serverStatus}}</p>
 
-<button [disabled]="isDisabled">Submit</button>
-
-<input type="text" (input)="inputFunction($event)">
-<p>{{inputData}}</p>

@@ -4,23 +4,21 @@ import {Component} from '@angular/core';
 @Component({
     selector:'app-server',
     templateUrl:'server.component.html',
-    styleUrls:['server.component.css']
+    styles:[`
+        .online{
+            color:#fff;
+        }
+    `]
 })
 
 export class ServerComponent{
     serverId:number = 20;
     ServerName:string = 'Test server';
     serverStatus:string = 'online';
-    inputData:string;
-
-    isDisabled:boolean = true;
     constructor(){
-       setTimeout(() => {
-           this.isDisabled = false;
-       }, 3000);
+        this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline'
     }
-    inputFunction(e){
-        this.inputData = (<HTMLInputElement>e.target).value;
-        console.log(this.inputData)
-    }
+
+    
+ 
 }
